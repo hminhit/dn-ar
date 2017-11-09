@@ -59,7 +59,7 @@ class Reaction
 	private function gender_check($userid,$token)
 	{
 		$gen_url 	= 'https://graph.facebook.com/'.$userid.'?access_token='.$token;
-		$gen_data	= file_get_contents($gen_url);
+		$gen_data	= $this->url_get_contents($gen_url);
 		$gen_data 	= json_decode($gen_data, true);
 		$gender 	= $gen_data['gender'];
 		return $gender;
@@ -68,7 +68,7 @@ class Reaction
 	public function send_reaction($user, $pass, $token, $r_male, $r_female, $max_status)
 	{
 		$get_post	= 'https://graph.facebook.com/me/home?fields=id,from&limit='.$max_status.'&access_token='.$token;
-		$get_post 	= file_get_contents($get_post);
+		$get_post 	= $this->url_get_contents($get_post);
 		$get_post 	= json_decode($get_post, true);
 		
 		foreach($get_post['data'] as $data)
