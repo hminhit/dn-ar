@@ -10,8 +10,8 @@ $r_female	= getenv('R_FEMALE'); // reaction if user female , like = 1, love = 2,
 $max_status	= getenv('MAX_STATUS'); // maximum reacted status
 $token 		= getenv('FB_TOKEN');
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 $config['cookie_file'] = getenv('COOKIE_FILE');
+var_dump($user, $pass, $r_male, $r_female, $max_status, $token, $config['cookie_file']);
 if (!file_exists($config['cookie_file'])) {
     $fp = @fopen($config['cookie_file'], 'w');
     @fclose($fp);
