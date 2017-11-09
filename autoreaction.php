@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-require_once(__DIR__ .'/lib/fb.php');
+require_once('fb.php');
 
 //////////////////////////////////////////////[edit authentication here]///////////////////////////////////////////
 $user		= getenv('FB_USER'); // facebook username / email
